@@ -115,7 +115,7 @@ BOOST_AUTO_TEST_CASE(string_storage)
 				CHECK_DEPLOY_GAS(0, 97693, evmVersion);
 			// Shanghai is cheaper due to `push0`
 			else
-				CHECK_DEPLOY_GAS(0, 97067, evmVersion);
+				CHECK_DEPLOY_GAS(0, 97715, evmVersion);
 		}
 		else
 		{
@@ -133,7 +133,7 @@ BOOST_AUTO_TEST_CASE(string_storage)
 	else if (evmVersion < EVMVersion::shanghai())
 		CHECK_DEPLOY_GAS(114077, 96457, evmVersion);
 	else
-		CHECK_DEPLOY_GAS(114077, 95831, evmVersion);
+		CHECK_DEPLOY_GAS(114077, 96479, evmVersion);
 
 	if (evmVersion >= EVMVersion::byzantium())
 	{

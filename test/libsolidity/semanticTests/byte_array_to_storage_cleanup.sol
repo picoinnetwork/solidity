@@ -30,10 +30,10 @@ contract C {
 // constructor() ->
 // gas irOptimized: 82100
 // gas irOptimized code: 357600
-// gas legacy: 101472
-// gas legacy code: 604200
-// gas legacyOptimized: 84956
-// gas legacyOptimized code: 391800
+// gas legacy: 101532
+// gas legacy code: 604800
+// gas legacyOptimized: 85004
+// gas legacyOptimized code: 392400
 // h() -> 0x20, 0x40, 0x00, 0
 // ~ emit ev(uint256[],uint256): 0x40, 0x21, 0x02, 0x00, 0x00
 // g() -> 0x20, 0x40, 0, 0x00
