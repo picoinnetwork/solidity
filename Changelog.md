@@ -8,7 +8,7 @@ Compiler Features:
 
 
 Bugfixes:
-
+ * TypeChecker: Fix segfault when assigning nested tuple to tuple.
 
 ### 0.8.26 (2024-05-21)
 
