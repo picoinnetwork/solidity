@@ -396,7 +396,7 @@ void StaticAnalyzer::checkDoubleStorageAssignment(Assignment const& _assignment)
 		{
 			if (ReferenceType const* ref = dynamic_cast<ReferenceType const*>(componentType))
 			{
-				if (ref && ref->dataStoredIn(DataLocation::Storage) && !ref->isPointer())
+				if (ref->dataStoredIn(DataLocation::Storage) && !ref->isPointer())
 				{
 					toStorageCopies++;
 					if (_rhs.components()[index]->dataStoredIn(DataLocation::Storage))
@@ -405,7 +405,7 @@ void StaticAnalyzer::checkDoubleStorageAssignment(Assignment const& _assignment)
 			}
 			else if (FixedBytesType const* bytesType = dynamic_cast<FixedBytesType const*>(componentType))
 			{
-				if (bytesType && bytesType->numBytes() == 1)
+				if (bytesType->numBytes() == 1)
 				{
 					if (FunctionCall const* lhsCall = dynamic_cast<FunctionCall const*>(resolveOuterUnaryTuples(lhsResolved->components().at(index).get())))
 					{
@@ -428,7 +428,7 @@ void StaticAnalyzer::checkDoubleStorageAssignment(Assignment const& _assignment)
 					}
 				}
 			}
-			else if (TupleType const* tupleType = dynamic_cast<TupleType const*>(componentType))
+			else if (dynamic_cast<TupleType const*>(componentType))
 				if (auto const* lhsNested = dynamic_cast<TupleExpression const*>(lhsResolved->components().at(index).get()))
 					if (auto const* rhsNestedType = dynamic_cast<TupleType const*>(_rhs.components().at(index)))
 						_recurse(
