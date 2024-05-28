@@ -35,17 +35,6 @@ using namespace solidity;
 using namespace solidity::langutil;
 using namespace solidity::frontend;
 
-namespace
-{
-
-Type const* type(Expression const& _expression)
-{
-	solAssert(!!_expression.annotation().type, "Type requested but not present.");
-	return _expression.annotation().type;
-}
-
-}
-
 /**
  * Helper class that determines whether a contract's constructor uses inline assembly.
  */
